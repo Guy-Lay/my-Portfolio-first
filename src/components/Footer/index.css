@@ -1,0 +1,52 @@
+.footer-section {
+    padding-top: clamp(25px, 4vw, 40px);
+    padding-bottom: clamp(30px, 5vw, 50px);
+    background-image: url('../../../public/image/0826fd74-9626-486e-be85-4eb818e9c83b.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* Pseudo-element for darkening the background image */
+.footer-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.footer-section > * {
+    position: relative;
+    z-index: 2;
+    padding-left: clamp(10px, 3vw, 20px);
+    padding-right: clamp(10px, 3vw, 20px);
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+    .footer-section {
+        padding-top: 30px;
+        padding-bottom: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-section {
+        padding-top: 25px;
+        padding-bottom: 35px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .footer-section {
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+}

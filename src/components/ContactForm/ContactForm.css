@@ -1,0 +1,403 @@
+.contact-section {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.contactForm__title {
+    font-size: 35px;
+}
+
+.contactForm__description {
+    max-width: 53%;
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.contactForm__title,
+.contactForm__description {
+    opacity: 0;
+    /* Initially hidden */
+    transform: translateY(-20px);
+    /* Start slightly above */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    /* Smooth transition */
+}
+
+.contactForm__visible {
+    opacity: 1;
+    /* Fully visible */
+    transform: translateY(0);
+    /* Move to final position */
+}
+
+.contactForm__form {
+    display: flex;
+    width: 65%;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.contactForm__formInputs {
+    padding-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+.contactForm__formInputs--inputs {
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contactForm__formInputs--inputs label {
+    font-size: 15px;
+    padding-bottom: 10px;
+}
+
+.contactForm__formInputs--name {
+    width: 230px;
+    height: 40px;
+    background-color: transparent;
+    padding-left: 10px;
+    border: solid 1px rgb(173, 173, 173);
+    border-radius: 10px;
+    color: rgb(231, 231, 231);
+}
+
+.contactForm__formInputs--email {
+    width: 230px;
+    color: rgb(231, 231, 231);
+    height: 40px;
+    padding-left: 10px;
+    background-color: transparent;
+    border: solid 1px rgb(173, 173, 173);
+    border-radius: 10px;
+}
+
+.contactForm__formInputs--message {
+    width: 97%;
+    padding: 10px;
+    background-color: transparent;
+    height: 80px;
+    font-size: 15px;
+    border: solid 1px rgb(173, 173, 173);
+    border-radius: 10px;
+    color: rgb(231, 231, 231);
+}
+
+.contactForm__formInputs-messageContainer {
+    padding-bottom: 20px;
+}
+
+.contactForm__formInputs--buttonContainer {
+    display: flex;
+    padding-bottom: 40px;
+    position: relative;
+    height: 90px;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.contactForm__formInputs--button {
+    border: none;
+    border-radius: 10px;
+    background: #2e7fde;
+    font-size: 17px;
+    cursor: pointer;
+    width: 170px;
+    height: 50px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    color: rgb(231, 231, 231);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.contactForm__formInputs--button:hover {
+    transform: translateY(-2px);
+    /* filter: blur(2px); */
+    background: #1d60ad;
+}
+
+.contactForm__formInputs--buttonContainer::before {
+    content: "";
+    position: absolute;
+    width: 130%;
+    height: 1px;
+    background-color: #757575;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.contactForm__formInputs--name::placeholder,
+.contactForm__formInputs--email::placeholder,
+.contactForm__formInputs--message::placeholder {
+    color: rgb(173, 173, 173);
+    /* Placeholder color */
+    opacity: 1;
+    /* Default opacity */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Smooth transition */
+    transform: translateX(0);
+    /* Start position */
+}
+
+.contactForm__formInputs--name:focus::placeholder,
+.contactForm__formInputs--email:focus::placeholder,
+.contactForm__formInputs--message:focus::placeholder {
+    opacity: 0;
+    /* Make placeholder invisible on focus */
+    transform: translateX(10px);
+    /* Move placeholder to the right */
+}
+
+.toast-custom {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Dark background with transparency */
+    color: white;
+    /* Text color */
+    border-radius: 8px;
+    /* Rounded corners */
+    padding: 16px;
+    /* Add padding for better spacing */
+    font-size: 16px;
+    /* Increase font size for readability */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    /* Add shadow for depth */
+    transition: all 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.toast-custom:hover {
+    transform: scale(1.05);
+    /* Slightly scale up on hover */
+}
+
+.input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 10px;
+    color: #666;
+    font-size: 16px;
+}
+
+.textarea-container {
+    width: 100%;
+}
+
+.textarea-icon {
+    top: 10px;
+}
+
+.contactForm__formInputs--name,
+.contactForm__formInputs--email,
+.contactForm__formInputs--message {
+    padding-left: 35px;
+    /* Make room for the icon */
+}
+
+.button-icon {
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+.contactForm__formInputs--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.user-info__item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: transform 0.2s ease;
+}
+
+.user-info__item:hover {
+    transform: translateX(10px);
+}
+
+.user-info__icon {
+    color: #64ffda;
+    font-size: 1.25rem;
+}
+
+.user-info__text {
+    color: #ccd6f6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.user-info__text:hover {
+    color: #64ffda;
+}
+
+/* Add responsive breakpoints */
+@media screen and (max-width: 1024px) {
+    .contact-section {
+        width: 70%;
+    }
+
+    .contactForm__form {
+        width: 80%;
+    }
+
+    .contactForm__description {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .contact-section {
+        width: 85%;
+    }
+
+    .contactForm__form {
+        width: 90%;
+    }
+
+    .contactForm__description {
+        max-width: 80%;
+    }
+
+    .contactForm__formInputs {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .contactForm__formInputs--inputs {
+        width: 100%;
+    }
+
+    .contactForm__formInputs--name,
+    .contactForm__formInputs--email {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contact-section {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .contactForm__title {
+        font-size: 28px;
+    }
+
+    .contactForm__description {
+        max-width: 90%;
+        padding-bottom: 30px;
+    }
+
+    .contactForm__form {
+        width: 100%;
+    }
+
+    .contactForm__formInputs--inputs label {
+        font-size: 14px;
+    }
+
+    .contactForm__formInputs--name,
+    .contactForm__formInputs--email {
+        height: 45px;
+    }
+
+    .contactForm__formInputs--message {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .user-info {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    .user-info__icon {
+        font-size: 1.1rem;
+    }
+
+    .user-info__text {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .contact-section {
+        width: 100%;
+        padding: 8px;
+    }
+
+    .contactForm__title {
+        font-size: 24px;
+    }
+
+    .contactForm__description {
+        max-width: 95%;
+        padding-bottom: 25px;
+        font-size: 14px;
+    }
+
+    .contactForm__formInputs {
+        gap: 15px;
+    }
+
+    .contactForm__formInputs--name,
+    .contactForm__formInputs--email,
+    .contactForm__formInputs--message {
+        padding-left: 32px;
+        font-size: 14px;
+    }
+
+    .contactForm__formInputs--button {
+        width: 150px;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .input-icon {
+        font-size: 14px;
+    }
+
+    .user-info {
+        padding: 1rem 0.75rem;
+        gap: 0.5rem;
+    }
+
+    .toast-custom {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
